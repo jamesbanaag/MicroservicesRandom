@@ -21,13 +21,13 @@ public class RandomNumController {
 	public ArrayList<Dice> getDice() {
 		Random rm = new Random();
 		String name = "dice";
-		
+		NumberDAO dao = new NumberDAO();
 		ArrayList <Dice> diceResult = new ArrayList<Dice>();	
 		for (int i = 0; i < 3; i++) {
 			Dice dice = new Dice(name+i, rm.nextInt(6)+1);
 			diceResult.add(dice);
 		}
-		
+		dao.insertDice(diceResult);
 		return diceResult;
 	}
 }
