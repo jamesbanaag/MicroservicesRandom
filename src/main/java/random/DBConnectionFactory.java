@@ -3,10 +3,7 @@ package random;
 import java.sql.Connection;
 
 public abstract class DBConnectionFactory {
-    private String driverName = "com.mysql.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost:3306/mydb?autoReconnect=true&useSSL=false";
-    private String username = "root";
-    private String password = "password123!";
+
     
     public static DBConnectionFactory getInstance() {
         return new DBConnectionFactoryImpl();
@@ -14,21 +11,7 @@ public abstract class DBConnectionFactory {
     
     public abstract Connection getConnection();
 
-    public String getDriverName() {
-        return driverName;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
+    
     
     
 }
