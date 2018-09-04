@@ -28,6 +28,7 @@ public class DBConnectionFactoryImpl extends DBConnectionFactory{
                     DriverManager.getConnection(prop.getProperty("db.url"), prop.getProperty("db.username"), prop.getProperty("db.password"));
             return conn;
         	}
+		return null;
         } catch (ClassNotFoundException | SQLException | IOException ex) {
             Logger.getLogger(DBConnectionFactoryImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
