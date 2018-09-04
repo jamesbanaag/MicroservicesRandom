@@ -27,7 +27,6 @@ public class RandomNumController {
 			Dice dice = new Dice(name+i, rm.nextInt(6)+1);
 			diceResult.add(dice);
 		}
-		dao.insertDice(diceResult);
 		return diceResult;
 	}
 }
