@@ -19,10 +19,10 @@ public class DBConnectionFactoryImpl extends DBConnectionFactory{
     	InputStream input = null;
     	
         try {
-        	if (prop.getProperty("use.database").equals("true")) {
-        	input = new FileInputStream("config/application.properties");
-        	
+		input = new FileInputStream("config/application.properties");
         	prop.load(input);
+        	if (prop.getProperty("use.database").equals("true")) {
+        	
             Class.forName(prop.getProperty("db.drivername"));
             Connection conn = 
                     DriverManager.getConnection(prop.getProperty("db.url"), prop.getProperty("db.username"), prop.getProperty("db.password"));
