@@ -13,6 +13,8 @@ public class NumberDAO {
 	public void insertDice(ArrayList<Dice> dicelist) {
 		DBConnectionFactory myFactory = DBConnectionFactory.getInstance();
 		Connection conn = myFactory.getConnection();
+		
+		if (conn!=null) {
 		PreparedStatement pstmt = null;
 		String query = "";
 		java.util.Date dt = new java.util.Date();
@@ -37,5 +39,5 @@ public class NumberDAO {
 			}
 		}
 	}
-	
+	}
 }
